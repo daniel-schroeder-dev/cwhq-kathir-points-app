@@ -1,0 +1,31 @@
+@import "reset.css";
+
+/* Header and Navbar */
+header {
+    width: 100vw;
+    background-color: #72caff;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    width: 75vw;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 6px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 10vw;
+    list-style: none;
+}
+
+.main-nav a {
+    text-decoration: none;
+}
