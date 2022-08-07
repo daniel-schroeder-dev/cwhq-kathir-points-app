@@ -3,15 +3,33 @@
 /* Custom properties */
 :root {
     --light-grey: #e6e6e6;
-    --blue: #0053b5;
+    --blue: #0265d9;
 }
 
-
 /* General site layout */
+
+html {
+    height: 100%;
+    padding: 24px;
+    overflow: hidden;
+}
+
 body {
     max-width: 1400px;
     margin: auto;
     border: 1px solid var(--light-grey);
+    min-height: unset;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 1px 4px 16px 0px rgba(61, 61, 61, 0.75);
+    overflow: hidden;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
 }
 
 /* Header and Navbar */
@@ -21,6 +39,7 @@ header {
     justify-content: center;
     border-bottom: solid 1px var(--light-grey);
     padding: 4px 16px;
+    height: 82px;
 }
 
 nav {
@@ -33,7 +52,7 @@ nav {
 h1 {
     color: var(--blue);
     margin-bottom: 6px;
-    font-family: 'Libre Baskerville', serif;
+    font-family: "Libre Baskerville", serif;
     font-size: 28px;
     letter-spacing: 1px;
 }
@@ -48,4 +67,9 @@ h1 {
 .main-nav a {
     text-decoration: none;
     color: var(--blue);
+}
+
+/* Admin panel */
+.left-container {
+    border-right: 1px solid var(--light-grey);
 }

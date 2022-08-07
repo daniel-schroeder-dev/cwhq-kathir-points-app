@@ -1,18 +1,34 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, session, request
 
 app = Flask(__name__)
+app.secret_key = "yZ)mDIC};iv+g0H"
 
 
 @app.route("/")
 def home():
-    return redirect(url_for("login")) 
+    return redirect(url_for("login"))
 
 
-@app.route("/sign-up")
+@app.route("/sign-up", methods=["GET", "POST"])
 def sign_up():
     return render_template("sign-up.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html") 
+    if request.method == "POST":
+        session["is_logged_in"] = True
+        return redirect(url_for("admin"))
+
+    return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    session["is_logged_in"] = False
+    return redirect(url_for("login"))
+
+
+@app.route("/admin")
+def admin():
+    return render_template("admin.html")

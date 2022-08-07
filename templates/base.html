@@ -5,18 +5,25 @@
         <title>Points - Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}" />
-        
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <header>
             <nav>
                 <h1>Family Points App</h1>
                 <ul class="main-nav">
+                    {% if session.get("is_logged_in") %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
                     <li><a href="{{ url_for('login') }}">Login</a></li>
                     <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </header>
