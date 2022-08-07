@@ -18,6 +18,7 @@ def sign_up():
 def login():
     if request.method == "POST":
         session["is_logged_in"] = True
+        session["is_admin"] = True
         return redirect(url_for("admin"))
 
     return render_template("login.html")
@@ -26,6 +27,7 @@ def login():
 @app.route("/logout")
 def logout():
     session["is_logged_in"] = False
+    session["is_admin"] = False
     return redirect(url_for("login"))
 
 

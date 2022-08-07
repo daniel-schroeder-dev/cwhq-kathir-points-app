@@ -1,3 +1,4 @@
+{% import "macros.html" as macros %}
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -27,6 +28,9 @@
                 </ul>
             </nav>
         </header>
-        <main>{% block main %} {% endblock main %}</main>
+        <main>
+            {% block main %} {% if session.get("is_logged_in") and session.get("is_admin") %} {{
+            macros.render_admin_options() }} {% endif %} {% endblock main %}
+        </main>
     </body>
 </html>
