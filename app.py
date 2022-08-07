@@ -32,3 +32,44 @@ def logout():
 @app.route("/admin")
 def admin():
     return render_template("admin.html")
+
+
+# Admin endpoints
+@app.route("/users")
+def users():
+    return ""
+
+
+@app.route("/points")
+def points():
+    return ""
+
+
+@app.route("/activities")
+def activities():
+    return ""
+
+
+@app.route("/rewards")
+def rewards():
+    return ""
+
+
+@app.route("/requests")
+def requests():
+    return ""
+
+
+@app.route("/messages")
+def messages():
+    return ""
+
+
+@app.route("/roles")
+def roles():
+    return ""
+
+
+@app.route("/db-dump")
+def db_dump():
+    return ""
