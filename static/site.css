@@ -1,22 +1,41 @@
 @import "reset.css";
 
+/* Custom properties */
+:root {
+    --light-grey: #e6e6e6;
+    --blue: #0053b5;
+}
+
+
+/* General site layout */
+body {
+    max-width: 1400px;
+    margin: auto;
+    border: 1px solid var(--light-grey);
+}
+
 /* Header and Navbar */
 header {
-    width: 100vw;
-    background-color: #72caff;
+    width: 100%;
     display: flex;
     justify-content: center;
+    border-bottom: solid 1px var(--light-grey);
+    padding: 4px 16px;
 }
 
 nav {
     display: flex;
-    width: 75vw;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
 }
 
 h1 {
+    color: var(--blue);
     margin-bottom: 6px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 28px;
+    letter-spacing: 1px;
 }
 
 .main-nav {
@@ -28,4 +47,5 @@ h1 {
 
 .main-nav a {
     text-decoration: none;
+    color: var(--blue);
 }
