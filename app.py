@@ -39,7 +39,7 @@ def admin():
 # Admin endpoints
 @app.route("/users")
 def users():
-    return ""
+    return render_template("users.html")
 
 
 @app.route("/points")

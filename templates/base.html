@@ -29,8 +29,13 @@
             </nav>
         </header>
         <main>
-            {% block main %} {% if session.get("is_logged_in") and session.get("is_admin") %} {{
-            macros.render_admin_options() }} {% endif %} {% endblock main %}
+            {% block main %}
+            <div class="left-container">
+                {% if session.get("is_logged_in") and session.get("is_admin") %} {{
+                macros.render_admin_options() }} {% endif %}
+            </div>
+            <div class="right-container">{% block right_container %}{% endblock %}</div>
+            {% endblock main %}
         </main>
     </body>
 </html>
