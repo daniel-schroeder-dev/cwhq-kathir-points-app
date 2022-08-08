@@ -4,6 +4,7 @@
 :root {
     --light-grey: #e6e6e6;
     --blue: #0265d9;
+    --light-blue: #a3c0f4;
 }
 
 /* General site layout */
@@ -55,6 +56,11 @@ h1 {
     letter-spacing: 1px;
 }
 
+h2 {
+    text-align: center;
+    margin: 12px;
+}
+
 .main-nav {
     display: flex;
     justify-content: space-around;
@@ -84,4 +90,49 @@ h1 {
     justify-content: space-evenly;
     height: 60%;
     padding-left: 42px;
+}
+
+.right-container {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Table styles */
+
+table {
+    border-spacing: 0;
+    width: 90%;
+}
+
+thead {
+    text-align: left;
+}
+
+td,
+th {
+    padding: 5px 10px;
+    border: 1px solid var(--light-grey);
+    border-top-width: 0px;
+}
+
+thead tr th {
+    border-top-width: 1px;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+tr:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+tr:hover td,
+tr:hover th {
+    border-color: var(--light-blue);
 }
